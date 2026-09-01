@@ -1,0 +1,16 @@
+CreateThread(function()
+    while true do
+        Wait(0)
+        local playerId = PlayerId()
+        ClearPlayerWantedLevel(playerId)
+        SetPlayerWantedLevel(playerId, 0, false)
+        SetPlayerWantedLevelNow(playerId, false)
+        SetMaxWantedLevel(0)
+        SetDispatchCopsForPlayer(playerId, false)
+        SetCreateRandomCops(false)
+        SetCreateRandomCopsNotOnScenarios(false)
+        SetPoliceRadarBlips(false)
+        SetPoliceIgnorePlayer(playerId, true)
+        SetEveryoneIgnorePlayer(playerId, false)
+    end
+end)

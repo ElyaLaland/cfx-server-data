@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventaire</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="inventaire" class="hidden">
+        <div class="inv-wrapper">
+            <div class="panel">
+                <button id="closeBtn" class="close-btn">×</button>
+
+                <div class="header">
+                    <div class="brand">
+                        <div class="brand-title">Inventaire</div>
+                    </div>
+                    <div id="weight-label" class="weight-pill">0 / 0 kg</div>
+                </div>
+
+                <div class="weight-bar">
+                    <div class="weight-bar-fill" id="weight-bar-fill"></div>
+                </div>
+
+                <input type="text" id="search-input" class="search-input" placeholder="Rechercher un objet...">
+
+                <div class="grid" id="grid"></div>
+
+                <div class="grid hotbar-grid" id="hotbar"></div>
+            </div>
+
+            <div class="panel">
+                <div class="header">
+                    <div class="brand">
+                        <div class="brand-title">Sol</div>
+                    </div>
+                </div>
+
+                <div class="grid" id="ground-grid"></div>
+            </div>
+        </div>
+
+        <div id="qty-modal" class="qty-modal hidden">
+            <div class="qty-box">
+                <div class="qty-title">Quantité</div>
+                <input type="number" id="qty-input" min="1" value="1">
+                <div class="qty-actions">
+                    <button id="qty-cancel-btn" class="qty-btn qty-btn-secondary">Annuler</button>
+                    <button id="qty-all-btn" class="qty-btn qty-btn-secondary">Tout</button>
+                    <button id="qty-confirm-btn" class="qty-btn qty-btn-primary">Valider</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="context-menu" class="context-menu hidden">
+            <button id="ctx-use-btn" class="context-menu-item">Utiliser</button>
+            <button id="ctx-give-btn" class="context-menu-item" disabled title="Bientôt disponible">Donner</button>
+            <button id="ctx-drop-btn" class="context-menu-item">Jeter</button>
+        </div>
+
+        <div id="item-tooltip" class="item-tooltip hidden">
+            <div class="tooltip-name"></div>
+            <div class="tooltip-desc"></div>
+            <div class="tooltip-hint"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

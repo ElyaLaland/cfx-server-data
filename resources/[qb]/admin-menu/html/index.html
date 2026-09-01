@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Menu Administration</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="admin-panel" class="hidden">
+        <div class="panel">
+            <div class="panel-header">
+                <div>
+                    <div class="brand-title">Administration</div>
+                    <div class="brand-subtitle">Menu de gestion du serveur</div>
+                </div>
+                <button id="close-btn" class="close-btn">✕</button>
+            </div>
+
+            <div class="panel-body">
+
+                <!-- Vue principale : liste navigable aux flèches du clavier -->
+                <div id="view-main" class="view">
+                    <div id="admin-toggle-row" class="menu-row" tabindex="0">
+                        <span class="menu-row-label">Activer/Désactiver le mode admin</span>
+                        <span id="admin-toggle-box" class="toggle-box"></span>
+                    </div>
+
+                    <!-- N'apparaît qu'une fois le mode admin activé. Les prochaines
+                         fonctionnalités staff s'ajouteront ici, comme d'autres lignes. -->
+                    <div id="pnj-nav-row" class="menu-row hidden" tabindex="0">
+                        <span class="menu-row-label">PNJ</span>
+                        <span class="menu-row-chevron">›</span>
+                    </div>
+                </div>
+
+                <!-- Vue "PNJ" : tout se pilote au clavier, flèches + Entrée, jamais la souris -->
+                <div id="view-pnj" class="view hidden">
+                    <div class="view-header">
+                        <span class="view-back">‹ Retour (Échap)</span>
+                        <span class="view-title">PNJ</span>
+                    </div>
+
+                    <div class="section-label">Ajouter un PNJ à ta position (◄ ► et Entrée)</div>
+
+                    <div id="pnj-row-model" class="menu-row" tabindex="0">
+                        <span class="menu-row-label">Modèle</span>
+                        <span id="pnj-model-value" class="menu-row-value">◄ … ►</span>
+                    </div>
+
+                    <div id="pnj-row-name" class="menu-row" tabindex="0">
+                        <span class="menu-row-label">Nom</span>
+                        <span id="pnj-name-value" class="menu-row-value">PNJ sans nom</span>
+                        <input id="pnj-name-input" class="menu-row-input hidden" type="text" maxlength="50" />
+                    </div>
+
+                    <div id="pnj-row-place" class="menu-row menu-row-action" tabindex="0">
+                        <span class="menu-row-label">✓ Placer ici</span>
+                    </div>
+
+                    <div class="section-label section-label-spaced">PNJ déjà placés (◄ ► pour choisir l'action)</div>
+                    <div id="ped-list" class="ped-list">
+                        <div class="ped-list-empty">Aucun PNJ placé pour le moment.</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

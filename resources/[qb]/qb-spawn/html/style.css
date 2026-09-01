@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Segoe+UI:wght@400;500;600&display=swap");
+
+:root {
+    /* Palette Laland WL */
+    --md-dark-primary: #f6da97;
+    --md-dark-on-primary: #14110b;
+    --md-dark-surface: #0a0805;
+    --md-dark-surface-container: #14110b;
+    --md-dark-on-surface: #e5ddc8;
+    --md-dark-outline: rgba(246, 218, 151, 0.35);
+    --md-dark-success: #f6da97;
+    --md-dark-on-success: #14110b;
+
+    /* Shapes */
+    --md-radius-small: 4px;
+    --md-radius-medium: 6px;
+
+    /* Typography */
+    --font-title: "Playfair Display", "Segoe UI", serif;
+    --font-primary: "Segoe UI", Arial, sans-serif;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+
+    --md-typescale-title-medium-size: 15px;
+    --md-typescale-label-large-size: 14px;
+}
+
+#app {
+    font-family: var(--font-primary);
+    color: var(--md-dark-on-surface);
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spawn-locations {
+    text-transform: uppercase;
+    position: relative;
+    min-width: 34vh;
+    width: fit-content;
+    max-width: 38vh;
+    background-color: var(--md-dark-surface-container);
+    border: 1px solid var(--md-dark-outline);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+    padding: 34px 30px 30px;
+    cursor: default;
+    transition: 300ms;
+    animation: spawnFadeIn 0.8s ease forwards;
+}
+
+@keyframes spawnFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.spawn-brand {
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.spawn-brand h2 {
+    font-family: var(--font-title);
+    text-transform: none;
+    letter-spacing: 2px;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--md-dark-primary);
+    text-shadow: 0 0 18px rgba(246, 218, 151, 0.35);
+    margin: 0;
+}
+
+.location {
+    width: 100%;
+    margin-bottom: 12px;
+    transition: 200ms;
+    cursor: pointer;
+    border: 1px solid rgba(246, 218, 151, 0.25) !important;
+    border-radius: var(--md-radius-small) !important;
+}
+
+.v-btn.location:hover {
+    background-color: rgba(246, 218, 151, 0.12) !important;
+    box-shadow: 0 0 16px rgba(246, 218, 151, 0.2);
+    transition: 300ms;
+}
+
+.v-btn.location .v-btn__content {
+    font-family: var(--font-primary) !important;
+    font-size: var(--md-typescale-label-large-size) !important;
+    font-weight: var(--font-weight-medium) !important;
+    color: var(--md-dark-on-surface) !important;
+    letter-spacing: 2px;
+}
+
+.v-btn.location.selected {
+    background-color: var(--md-dark-primary) !important;
+    border-color: var(--md-dark-primary) !important;
+    box-shadow: 0 0 20px rgba(246, 218, 151, 0.35);
+}
+
+.v-btn.location.selected .v-btn__content {
+    color: var(--md-dark-on-primary) !important;
+}
+
+.submit-spawn {
+    background-color: var(--md-dark-success) !important;
+    width: 100%;
+    margin-top: 1.5vh;
+    transition: 0.2s;
+    cursor: pointer;
+    border-radius: var(--md-radius-small) !important;
+}
+
+.submit-spawn:hover {
+    box-shadow: 0 0 20px rgba(246, 218, 151, 0.45);
+}
+
+.v-btn.submit-spawn .v-btn__content {
+    font-family: var(--font-primary) !important;
+    font-size: var(--md-typescale-label-large-size) !important;
+    font-weight: var(--font-weight-bold) !important;
+    color: var(--md-dark-on-success) !important;
+    letter-spacing: 2px;
+}
+
+.spawn_locations-header {
+    width: 100%;
+    transition: 0.2s;
+    margin-bottom: 17.5px;
+}
+
+.spawn_locations-header > p {
+    font-family: var(--font-primary);
+    letter-spacing: 1px;
+    font-weight: var(--font-weight-medium);
+    position: relative;
+    color: var(--md-dark-on-surface);
+    text-align: center;
+    font-size: var(--md-typescale-title-medium-size);
+    opacity: 0.85;
+}
+
+.slide-top-fade-enter-active {
+    transition: all 0.3s ease-out;
+}
+.slide-top-fade-leave-active {
+    transition: all 0.5s cubic-bezier(1, 0.7, 0.9, 1);
+}
+.slide-top-fade-enter-from,
+.slide-top-fade-leave-to {
+    transform: translateY(-10%);
+    opacity: 0 !important;
+}
